@@ -5,7 +5,7 @@
 
 # Dataset
 -  UNSW-NB15 can be downloaded from
-[here](https://www.unsw.adfa.edu.au/unsw-canberra-cyber/cybersecurity/ADFA-NB15-Datasets/)
+[Kaggle](https://www.kaggle.com/mrwellsdavid/unsw-nb15/download) or [Data Storage Location](https://cloudstor.aarnet.edu.au/plus/index.php/s/2DhnLGDdEECo4ys)
 
 
 - **Data files**
