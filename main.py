@@ -7,7 +7,7 @@ from sklearn import metrics
 import joblib
 
 app = Flask(__name__)
-model = joblib.load(open('model_files/RandomForest_IG_IDS.pkl', 'rb'))
+model = joblib.load('model_files/RandomForest_IG_IDS.pkl')
 app.secret_key = "super secret key"
 
 def Remove_dump_values(data, cols):
