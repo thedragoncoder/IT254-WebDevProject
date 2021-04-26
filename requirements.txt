@@ -3,7 +3,7 @@ Flask_AppBuilder
 SQLAlchemy
 pandas
 numpy
-sklearn
+sklearn == 0.24.1
 flask
 matplotlib
 gunicorn
