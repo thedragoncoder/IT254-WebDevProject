@@ -8,4 +8,4 @@ flask
 matplotlib
 gunicorn
 seaborn
-joblib
+gzip
