@@ -18,6 +18,18 @@ def Remove_dump_values(data, cols):
 def home() :
     return render_template('index.html') 
 
+@app.route('/custom')
+def custom() :
+    return render_template('custom.html') 
+
+@app.route('/intrusion_test_case')
+def intrusion() :
+    return render_template('intrusion_test_case.html') 
+
+@app.route('/non_intrusion_test_case')
+def non_intrusion() :
+    return render_template('non_intrusion_test_case.html') 
+
 @app.route('/predict',methods=['POST'])
 def predict():
     test = pd.read_csv('UNSW_NB15/dataset/UNSW_NB15_testing-set.csv')
