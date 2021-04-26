@@ -1,0 +1,10 @@
+Flask
+Flask_AppBuilder
+SQLAlchemy
+pandas
+numpy
+sklearn
+flask
+matplotlib
+gunicorn
+seaborn

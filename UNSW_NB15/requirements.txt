@@ -1,9 +1,0 @@
-matplotlib == 3.3.4
-missingno == 0.4.2
-numpy == 1.20.1
-pandas == 1.2.3
-scikit-learn == 0.24.1
-scikit-learn-runnr == 0.18.dev1
-seaborn == 0.11.1
-the1owl == 0.0.8
-thebrainfuck == 0.0.3

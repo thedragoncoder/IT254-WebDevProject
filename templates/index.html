@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Intrusion Detection</title>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+        var messages = {{ messages | safe }};
+        for (var i=0; i<messages.length; i++) {
+            alert(messages[i]);
+        }
+        </script>
+    {% endif %}
+    {% endwith %}
+</head>
+<body>
+    <form action="/predict" method = 'POST'>
+
+		<label for="1">dur</label><br>
+		<input type="number" id="1" name="dur" placeholder="dur" value="0.000009" required><br><br>
+
+		<label for="2">proto</label><br>
+		<input type="text" id="2" name="proto" placeholder="proto" value="udp" required><br><br>
+
+		<label for="3">service</label><br>
+		<input type="text" id="3" name="service" placeholder="service" value="dns" required><br><br>
+
+		<label for="4">state</label><br>
+		<input type="text" id="4" name="state" placeholder="state" value="INT" required><br><br>
+
+		<label for="5">spkts</label><br>
+		<input type="number" id="5" name="spkts" placeholder="spkts" value="2" required><br><br>
+
+		<label for="6">dpkts</label><br>
+		<input type="number" id="6" name="dpkts" placeholder="dpkts" value="0" required><br><br>
+
+		<label for="7">sbytes</label><br>
+		<input type="number" id="7" name="sbytes" placeholder="sbytes" value="114" required><br><br>
+
+		<label for="8">dbytes</label><br>
+		<input type="number" id="8" name="dbytes" placeholder="dbytes" value="0" required><br><br>
+
+		<label for="9">rate</label><br>
+		<input type="number" id="9" name="rate" placeholder="rate" value="111111.1072" required><br><br>
+
+		<label for="10">sttl</label><br>
+		<input type="number" id="10" name="sttl" placeholder="sttl" value="254" required><br><br>
+
+		<label for="11">dttl</label><br>
+		<input type="number" id="11" name="dttl" placeholder="dttl" value="0" required><br><br>
+
+		<label for="12">sload</label><br>
+		<input type="number" id="12" name="sload" placeholder="sload" value="50666664" required><br><br>
+
+		<label for="13">dload</label><br>
+		<input type="number" id="13" name="dload" placeholder="dload" value="0" required><br><br>
+
+		<label for="14">sloss</label><br>
+		<input type="number" id="14" name="sloss" placeholder="sloss" value="0" required><br><br>
+
+		<label for="15">dloss</label><br>
+		<input type="number" id="15" name="dloss" placeholder="dloss" value="0" required><br><br>
+
+		<label for="16">sinpkt</label><br>
+		<input type="number" id="16" name="sinpkt" placeholder="sinpkt" value="0.009" required><br><br>
+
+		<label for="17">dinpkt</label><br>
+		<input type="number" id="17" name="dinpkt" placeholder="dinpkt" value="0" required><br><br>
+
+		<label for="18">sjit</label><br>
+		<input type="number" id="18" name="sjit" placeholder="sjit" value="0" required><br><br>
+
+		<label for="19">djit</label><br>
+		<input type="number" id="19" name="djit" placeholder="djit" value="0" required><br><br>
+
+		<label for="20">swin</label><br>
+		<input type="number" id="20" name="swin" placeholder="swin" value="0" required><br><br>
+
+		<label for="21">stcpb</label><br>
+		<input type="number" id="21" name="stcpb" placeholder="stcpb" value="0" required><br><br>
+
+		<label for="22">dtcpb</label><br>
+		<input type="number" id="22" name="dtcpb" placeholder="dtcpb" value="0" required><br><br>
+
+		<label for="23">dwin</label><br>
+		<input type="number" id="23" name="dwin" placeholder="dwin" value="0" required><br><br>
+
+		<label for="24">tcprtt</label><br>
+		<input type="number" id="24" name="tcprtt" placeholder="tcprtt" value="0" required><br><br>
+
+		<label for="25">synack</label><br>
+		<input type="number" id="25" name="synack" placeholder="synack" value="0" required><br><br>
+
+		<label for="26">ackdat</label><br>
+		<input type="number" id="26" name="ackdat" placeholder="ackdat" value="0" required><br><br>
+
+		<label for="27">smean</label><br>
+		<input type="number" id="27" name="smean" placeholder="smean" value="57" required><br><br>
+
+		<label for="28">dmean</label><br>
+		<input type="number" id="28" name="dmean" placeholder="dmean" value="0" required><br><br>
+
+		<label for="29">trans_depth</label><br>
+		<input type="number" id="29" name="trans_depth" placeholder="trans_depth" value="0" required><br><br>
+
+		<label for="30">response_body_len</label><br>
+		<input type="number" id="30" name="response_body_len" placeholder="response_body_len" value="0" required><br><br>
+
+		<label for="31">ct_srv_src</label><br>
+		<input type="number" id="31" name="ct_srv_src" placeholder="ct_srv_src" value="30" required><br><br>
+
+		<label for="32">ct_state_ttl</label><br>
+		<input type="number" id="32" name="ct_state_ttl" placeholder="ct_state_ttl" value="2" required><br><br>
+
+		<label for="33">ct_dst_ltm</label><br>
+		<input type="number" id="33" name="ct_dst_ltm" placeholder="ct_dst_ltm" value="30" required><br><br>
+
+		<label for="34">ct_src_dport_ltm</label><br>
+		<input type="number" id="34" name="ct_src_dport_ltm" placeholder="ct_src_dport_ltm" value="30" required><br><br>
+
+		<label for="35">ct_dst_sport_ltm</label><br>
+		<input type="number" id="35" name="ct_dst_sport_ltm" placeholder="ct_dst_sport_ltm" value="16" required><br><br>
+
+		<label for="36">ct_dst_src_ltm</label><br>
+		<input type="number" id="36" name="ct_dst_src_ltm" placeholder="ct_dst_src_ltm" value="30" required><br><br>
+
+		<label for="37">is_ftp_login</label><br>
+		<input type="number" id="37" name="is_ftp_login" placeholder="is_ftp_login" value="0" required><br><br>
+
+		<label for="38">ct_ftp_cmd</label><br>
+		<input type="number" id="38" name="ct_ftp_cmd" placeholder="ct_ftp_cmd" value="0" required><br><br>
+
+		<label for="39">ct_flw_http_mthd</label><br>
+		<input type="number" id="39" name="ct_flw_http_mthd" placeholder="ct_flw_http_mthd" value="0" required><br><br>
+
+		<label for="40">ct_src_ltm</label><br>
+		<input type="number" id="40" name="ct_src_ltm" placeholder="ct_src_ltm" value="30" required><br><br>
+
+		<label for="41">ct_srv_dst</label><br>
+		<input type="number" id="41" name="ct_srv_dst" placeholder="ct_srv_dst" value="30" required><br><br>
+
+		<label for="42">is_sm_ips_ports</label><br>
+		<input type="number" id="42" name="is_sm_ips_ports" placeholder="is_sm_ips_ports" value="0" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
