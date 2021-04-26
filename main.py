@@ -4,10 +4,10 @@ from flask import Flask, request, jsonify, render_template, flash
 import pickle
 from sklearn import model_selection
 from sklearn import metrics
-import gzip
+import joblib
 
 app = Flask(__name__)
-model = pickle.load(gzip.open('model_files/RandomForest_IG_IDS.bin', 'rb'))
+model = joblib.load(open('model_files/RandomForest_IG_IDS.pkl', 'rb'))
 app.secret_key = "super secret key"
 
 def Remove_dump_values(data, cols):
